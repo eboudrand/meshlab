@@ -17,7 +17,6 @@ SUBDIRS       = common \
                 meshlabplugins/io_pdb \
                 meshlabplugins/io_txt \
                 meshlabplugins/io_u3d\
-
 # Filter plugins
                 meshlabplugins/filter_aging \
                 meshlabplugins/filter_ao \
@@ -76,8 +75,6 @@ SUBDIRS       = common \
 # Sample Plugins
                 sampleplugins/sampleedit \
                 sampleplugins/samplefilter \
-                sampleplugins/samplefilterdyn \     
+                sampleplugins/samplefilterdyn \
                 sampleplugins/filter_createiso \
                 sampleplugins/filter_geodesic \
-
-
