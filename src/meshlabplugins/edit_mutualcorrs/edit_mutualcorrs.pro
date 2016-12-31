@@ -1,7 +1,7 @@
 include (../../shared.pri)
 
 
-HEADERS       = += ./alignset.h \
+HEADERS       = ./alignset.h \
     ./levmarmethods.h \
     ./mutual.h \
     ./parameters.h \
@@ -29,7 +29,7 @@ FORMS         = edit_mutualcorrsDialog.ui
 win32-msvc2013:  LIBS += ../../external/lib/win32-msvc2013/levmar.lib
 win32-msvc2015:  LIBS += ../../external/lib/win32-msvc2015/levmar.lib
 win32-g++:LIBS += -L../../external -llevmar
-linux-g++:LIBS += -L../../external/lib/linux-g++ -llevmar
+linux-g++:LIBS += -L../../../src/external/lib/linux-g++ -llevmar
 linux-g++-32:LIBS += -L../../external/lib/linux-g++-32 -llevmar
 linux-g++-64:LIBS += -L../../external/lib/linux-g++-64 -llevmar
 macx:LIBS            += $$MACLIBDIR/liblevmar.a
