@@ -56,7 +56,7 @@ namespace StructureSynth {
 			
 			if (type == Sphere) {
 				Vector3f v(0,0,0);
-				Vector3f v1 = b->getState().matrix * v;
+                //Vector3f v1 = b->getState().matrix * v;
 				Vector3f c =  b->getState().matrix * Vector3f(0.5,0.5,0.5);
 				Vector3f c2 = (b->getState().matrix * Vector3f(0.5,0.5,0.0));
 				double r =  (c-  c2).length();

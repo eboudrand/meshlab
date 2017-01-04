@@ -557,7 +557,7 @@ static void ProcessExifDir(unsigned char * DirStart, unsigned char * OffsetBase,
         if (ShowTags){
             // Show tag name
             for (a=0;;a++){
-                if (a >= TAG_TABLE_SIZE){
+                if (a >= (int)TAG_TABLE_SIZE){
                     printf("%s    Unknown Tag %04x Value = ", IndentString, Tag);
                     break;
                 }
@@ -1557,7 +1557,7 @@ void ShowImageInfo(int ShowFileInfo)
         // show it if its something else, like 'progressive' (used on web sometimes)
         int a;
         for (a=0;;a++){
-            if (a >= PROCESS_TABLE_SIZE){
+            if (a >= (int)PROCESS_TABLE_SIZE){
                 // ran off the end of the table.
                 printf("Jpeg process : Unknown\n");
                 break;

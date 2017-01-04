@@ -859,6 +859,8 @@ namespace mu
 
           m_vRPN.AddFun(funTok.GetFuncAddr(), (funTok.GetArgCount()==-1) ? -iArgNumerical : iArgNumerical);
           break;
+     default:
+        printf("ParserBase::ApplyFunc(): token_type %d used", funTok.GetCode());
     }
 
     // Push dummy value representing the function result to the stack

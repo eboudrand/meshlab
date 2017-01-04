@@ -94,7 +94,7 @@ int main ( int argc, char** argv )
 
    nZ = M_BLOCK;
    r = BZ2_bzBuffToBuffCompress (
-         zbuf, &nZ, inbuf, nIn, 9, 0, 30 );
+         (char*)zbuf, (unsigned int *)&nZ, (char *)inbuf, (unsigned int)nIn, 9, 0, 30 );
 
    assert (r == BZ_OK);
    fprintf ( stderr, "%d after compression\n", nZ );
@@ -104,7 +104,7 @@ int main ( int argc, char** argv )
       flip_bit ( bit );
       nOut = M_BLOCK_OUT;
       r = BZ2_bzBuffToBuffDecompress (
-            outbuf, &nOut, zbuf, nZ, 0, 0 );
+            (char *)outbuf, (unsigned int *)&nOut, (char *)zbuf, (unsigned int)nZ, 0, 0 );
       fprintf ( stderr, " %d  %s ", r, bzerrorstrings[-r] );
 
       if (r != BZ_OK) {

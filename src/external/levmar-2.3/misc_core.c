@@ -425,7 +425,7 @@ int info, rank, worksz, *iwork, iworksz;
 static int LEVMAR_LUINVERSE(LM_REAL *A, LM_REAL *B, int m)
 {
 void *buf=NULL;
-int buf_sz=0;
+//int buf_sz=0;
 
 register int i, j, k, l;
 int *idx, maxi=-1, idx_sz, a_sz, x_sz, work_sz, tot_sz;
@@ -438,7 +438,7 @@ LM_REAL *a, *x, *work, max, sum, tmp;
   work_sz=m;
   tot_sz=idx_sz*sizeof(int) + (a_sz+x_sz+work_sz)*sizeof(LM_REAL);
 
-  buf_sz=tot_sz;
+  //buf_sz=tot_sz;
   buf=(void *)malloc(tot_sz);
   if(!buf){
     fprintf(stderr, RCAT("memory allocation in ", LEVMAR_LUINVERSE) "() failed!\n");

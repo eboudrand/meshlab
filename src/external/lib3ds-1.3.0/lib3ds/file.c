@@ -1963,6 +1963,8 @@ file_bounding_box_of_nodes_impl(Lib3dsNode *node, Lib3dsFile *file, Lib3dsBool i
       }
       break;
     */
+  default:
+      printf("file_bounding_box_of_nodes_impl(): type %d used", node->type);
   }
   {
     Lib3dsNode *p=node->childs;

@@ -1174,14 +1174,14 @@ lib3ds_quat_track_read(Lib3dsQuatTrack *track, Lib3dsIo *io)
 {
   int keys;
   int i,j;
-  Lib3dsQuatKey *p,*k;
+  Lib3dsQuatKey *k;
 
   track->flags=lib3ds_io_read_word(io);
   lib3ds_io_read_dword(io);
   lib3ds_io_read_dword(io);
   keys=lib3ds_io_read_intd(io);
 
-  for (p=0,i=0; i<keys; p=k,++i) {
+  for (i=0; i<keys; ++i) {
     k=lib3ds_quat_key_new();
     if (!lib3ds_tcb_read(&k->tcb, io)) {
       return(LIB3DS_FALSE);
@@ -1548,5 +1548,7 @@ lib3ds_dump_tracks(Lib3dsNode *node)
       printf("pos: ");
       lib3ds_lin3Track_dump(&node->data.spot.pos_track);
       break;
+    default:
+      printf("unknown node %d :",node->type);
   }
 }

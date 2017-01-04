@@ -306,6 +306,9 @@ namespace mu
                 bOptimized = true;
               }
               break;
+
+        default:
+            printf("ParserByteCode::AddOp(): ECmdCode %d used", a_Oprt);
               
         } // switch a_Oprt
       }
