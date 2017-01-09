@@ -84,7 +84,7 @@ void EqHandle::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 	setCursor(Qt::OpenHandCursor);
 
 	QPointF newPos = event->scenePos();
-	qreal handleOffset = fabs(newPos.x()-pos().x());
+	qreal handleOffset = std::fabs(newPos.x()-pos().x());
 
 	if (handleOffset >= std::numeric_limits<float>::epsilon())
 	{
